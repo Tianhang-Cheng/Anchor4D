@@ -1,0 +1,20 @@
+{
+  "python": {
+    "anchor4d": "<anchor4d env>/bin/python",
+    "sam3": "<sam3 env>/bin/python",
+    "pi3": "<pi3 env>/bin/python",
+    "lightx2v": "<lightx2v env>/bin/python",
+    "matting": "<birefnet env>/bin/python",
+    "pixal3d": "<pixal3d env>/bin/python",
+    "hi3d": "<hi3d env>/bin/python"
+  },
+  "sam3_checkpoint": "checkpoints/sam3/sam3.pt",
+  "pi3_root": "third_party/Pi3",
+  "pi3x_checkpoint": "checkpoints/Pi3X/model.safetensors",
+  "lightx2v_root": "third_party/LightX2V",
+  "vace_model": "checkpoints/Wan2.1-VACE-1.3B",
+  "pixal3d_root": "third_party/Pixal3D",
+  "hi3d_checkpoint": "checkpoints/Hi3Dv1.0",
+  "anchor4d_weights": "checkpoints/anchor4d",
+  "wan": "checkpoints/Wan2.2-TI2V-5B"
+}

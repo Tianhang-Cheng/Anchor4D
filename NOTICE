@@ -1,0 +1,18 @@
+Anchor4D
+Licensed under the Apache License 2.0 (see LICENSE), except for the parts below.
+
+vae/layers.py
+  Adapted from AnimateAnyMesh (https://github.com/JarrentWu1031/AnimateAnyMesh), Apache License 2.0.
+
+wan/model.py, wan/vae.py
+  Adapted from Wan2.2 (https://github.com/Wan-Video/Wan2.2), Copyright 2024-2025 The Alibaba Wan Team Authors,
+  Apache License 2.0.
+
+generator/tracker.py
+  Architecture of the AllTracker feature encoder (https://github.com/aharley/alltracker),
+  Copyright (c) 2025 Adam W. Harley, MIT License.
+
+generator/model.py
+  The generator transformer follows the R-DMesh DiT architecture (https://github.com/Tencent-Hunyuan/R-DMesh);
+  copyright of R-DMesh belongs to its authors. The released generator weights are initialized from the R-DMesh
+  weights; see the weights page for their terms.
