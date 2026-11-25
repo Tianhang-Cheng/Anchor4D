@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Anchor4D: Geodesic-Aware Attention for Video-Driven Mesh Animation.">
+  <title>Anchor4D: Geodesic-Aware Attention for Video-Driven Mesh Animation</title>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/site.css">
+  <link rel="stylesheet" href="./static/css/page.css?v=ours-pink-20261117">
+  <link rel="stylesheet" href="./static/css/warm.css?v=ours-pink-20261117">
+  <link rel="stylesheet" href="./static/css/task-cues.css?v=inline-task-labels-20261117">
+  <link rel="stylesheet" href="./static/css/v2.css?v=20261125-herobands">
+  <link rel="stylesheet" href="./static/css/mobile.css?v=20261120b">
+  <link rel="stylesheet" href="./static/css/public.css">
+</head>
+
+<body>
+
+  <nav class="pg-topnav" id="pg-nav">
+    <a class="nav-task-gen" href="#text4d"><svg class="task-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="./static/images/task-icons.svg#gen"></use></svg><span class="nav-task-code">GEN</span>Applications</a>
+    <a href="#insight">Key idea</a>
+    <a href="#real">Real videos</a>
+    <a href="#compare">Video-to-4D</a>
+    <a class="nav-task-recon" href="#recon"><svg class="task-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="./static/images/task-icons.svg#recon"></use></svg><span class="nav-task-code">RECON</span></a>
+    <a href="#longseq">Long sequences</a>
+    <a href="#failure">Failure case</a>
+  </nav>
+
+  <section class="hero site-hero">
+    <div class="hero-body">
+      <div class="container is-max-widescreen">
+        <div class="has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <span class="site-brand">Anchor<span class="app-4d" id="app-4d">4D</span></span>
+            <span class="site-title-rest">Geodesic-Aware Attention for Video-Driven Mesh Animation</span>
+          </h1>
+          <div id="app-hero-mount"></div>
+          <div class="pub-authors"><span><a href="https://tianhang-cheng.github.io/">Tianhang Cheng</a></span><span><a href="https://shenlong.web.illinois.edu/">Shenlong Wang</a></span></div>
+          <div class="pub-affils"><span>University of Illinois at Urbana-Champaign</span></div>
+          <div class="pub-links"><a class="pub-btn" href="https://github.com/Tianhang-Cheng/Anchor4D"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>Code</a><a class="pub-btn" href="https://huggingface.co/TianhangCheng7/Anchor4D"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 2.5l8.5 4.75v9.5L12 21.5l-8.5-4.75v-9.5zM3.5 7.25L12 12l8.5-4.75M12 12v9.5"/></svg>Weights</a></div>
+          
+          <figure class="pg-teaser">
+            <div class="pg-teaser-scroll"><img src="static/images/teaser/teaser.jpg" alt="Anchor4D animates a given 3D mesh from a video, or from text with an optional mesh or image." loading="eager"></div>
+            <figcaption><b>Anchor4D</b> animates a given 3D mesh from a monocular video (top left) or, with an off-the-shelf video generator, from text, optionally paired with a 3D mesh or image. Parts that merely touch move independently. The output keeps the input topology and per-vertex correspondence, with no skeleton or template.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section app-merged" id="text4d">
+    <div class="container is-max-widescreen">
+      <div class="task-heading">
+        <span class="task-mark task-mark--gen" aria-label="4D generation"><svg class="task-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="./static/images/task-icons.svg#gen"></use></svg><span>GEN</span></span>
+        <h2 class="title is-3 section-title has-text-centered">Applications: text, image, mesh or video to 4D</h2>
+      </div>
+      <p class="pg-lede">Pick an example below. The input pills at the top of the page filter the examples.</p>
+      <div class="pg-drag-callout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M21 3v6h-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Interactive 3D viewer</b> · drag to rotate</span></div>
+      <div class="app3" id="app3"></div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="insight">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 section-title has-text-centered">Key idea: surface neighbors, not spatial neighbors</h2>
+      <p class="pg-lede">Two parts can touch in space yet lie far apart on the surface. Our attention measures distance along the surface, so a hand resting on a hip does not drag the hip.</p>
+      <div class="pg-insight-wrap">
+        <video playsinline preload="none" poster="static/videos/key_idea/key_idea_poster.jpg">
+          <source src="static/videos/key_idea/key_idea.mp4" type="video/mp4">
+          <source src="static/videos/key_idea/key_idea.webm" type="video/webm">
+        </video>
+        <button type="button" class="pg-insight-play" aria-label="Play the key-idea video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+        <p class="pg-insight-note">Click to play (46 s, with voice-over).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="real">
+    <div class="container is-max-widescreen">
+      <div class="task-heading">
+        <span class="task-mark task-mark--gen" aria-label="Video-conditioned 4D generation"><svg class="task-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="./static/images/task-icons.svg#gen"></use></svg><span>GEN</span></span>
+        <h2 class="title is-3 section-title has-text-centered">Real-world videos</h2>
+      </div>
+      <p class="pg-lede">Each pair shows the input video and ours from the same first-frame mesh. <b>Check that the mesh follows the video and keeps its shape. Click any pair to compare all methods on that clip.</b></p>
+      <div id="real-wall"></div>
+      
+      <div class="pg-subsec" id="gpt">
+        <h3 class="pg-subsec-title">Quantitative results on real videos</h3>
+      <p class="pg-lede">Two measures per dataset. <b>GPT judge:</b> how closely each animation follows the reference video; each bar counts the segments where ours is preferred, similar, or the baseline is preferred. <b>Measured error:</b> 3D error on ARCTIC, PhysTwin and DyCheck, and 2D track error on DAVIS, which has no 3D ground truth.</p>
+      <div class="pg-tabs" id="gpt-tabs"></div>
+      <div class="pg-gpt-legend"><span><i class="is-win"></i>Ours better</span><span><i class="is-tie"></i>About the same</span><span><i class="is-loss"></i>Baseline better</span><span class="pg-gpt-legend-score">% = preference averaged over clips, ties count half</span></div>
+      <div class="pg-gpt" id="gpt-chart"></div>
+      <p class="pg-gpt-note">Judge: GPT-6 Astra (high reasoning). It sees synchronized video and anonymous renderings in segments of up to 2 s, with three judgments in each A/B order. A segment counts as a win or loss only when both orders agree. Scores weight segments by length, average equally over clips and count ties as half. The GPT-Astra baseline shares the judge's model family. DyCheck and PhysTwin use the displayed finetuned R-DMesh. PhysTwin covers all 22 clips. The full protocol is in the paper.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="compare">
+    <div class="container is-max-widescreen">
+      <div class="task-heading">
+        <span class="task-mark task-mark--gen" aria-label="Video-conditioned 4D generation"><svg class="task-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="./static/images/task-icons.svg#gen"></use></svg><span>GEN</span></span>
+        <h2 class="title is-3 section-title has-text-centered">Video-to-4D comparison</h2>
+      </div>
+      <p class="pg-lede">Synthetic clips with ground truth, from six sources; each card shows ours. <b>Watch thin parts and parts that touch: they should move with their own part, not with their neighbours. Click any clip to compare with the ground truth and all methods.</b></p>
+      <div id="compare-wall"></div>
+    </div>
+  </section>
+
+  <section class="section" id="recon">
+    <div class="container is-max-widescreen">
+      <div class="task-heading">
+        <span class="task-mark task-mark--recon" aria-label="Motion reconstruction"><svg class="task-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="./static/images/task-icons.svg#recon"></use></svg><span>RECON</span></span>
+        <h2 class="title is-3 section-title has-text-centered">Motion VAE reconstruction</h2>
+      </div>
+      <p class="pg-lede">Surface distance in action: each method encodes a ground-truth animation and decodes it back. <b>Colour shows per-vertex error; compare the methods where separate parts touch.</b></p>
+      <div class="pg-chips" id="recon-chips"></div>
+      <div class="pg-sync-grid pg-cols-5" id="recon-grid"></div>
+      <div class="pg-colorbar"><span>0</span><i></i><span>&ge; 0.03</span><em>per-vertex error</em></div>
+      <div class="pg-controls" id="recon-controls"></div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="longseq">
+    <div class="container pg-long-container">
+      <div class="task-heading">
+        <span class="task-mark task-mark--gen" aria-label="Video-conditioned 4D generation"><svg class="task-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="./static/images/task-icons.svg#gen"></use></svg><span>GEN</span></span>
+        <h2 class="title is-3 section-title has-text-centered">Long sequences</h2>
+      </div>
+      <p class="pg-lede">Full-length clips, animated window by window. <b>Look for drift late in the clip; errors can add up over windows.</b></p>
+      <div class="pg-chips" id="longseq-chips"></div>
+      <div class="pg-long-display">
+        <div class="pg-tabs" id="longseq-views" aria-label="Rendering view"></div>
+      </div>
+      <p class="pg-long-meta" id="longseq-meta"></p>
+      <div class="pg-sync-grid pg-cols-7" id="longseq-grid"></div>
+      <div class="pg-controls" id="longseq-controls"></div>
+    </div>
+  </section>
+
+  <section class="section" id="failure">
+    <div class="container is-max-widescreen">
+      <div class="task-heading">
+        <span class="task-mark task-mark--gen" aria-label="Video-conditioned 4D generation"><svg class="task-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="./static/images/task-icons.svg#gen"></use></svg><span>GEN</span></span>
+        <h2 class="title is-3 section-title has-text-centered">Failure case and limitations</h2>
+      </div>
+      <p class="pg-lede">DAVIS <i>breakdance</i>. The mesh reconstructed from the first frame <b>fuses the forearm to the head</b>. All methods animate this same mesh, so <b>none of them, ours included, can separate the two parts</b> when the arm moves away later in the clip.</p>
+      <div class="pg-sync-grid pg-cols-4" id="failure-grid"></div>
+      <div class="pg-controls" id="failure-controls"></div>
+      <ul class="pg-limits">
+        <li>Fast motion within a window can reduce reconstruction accuracy.</li>
+        <li>The VAE deforms a fixed reference mesh, so it cannot change topology (no tearing or splitting).</li>
+        <li>Errors can add up over chained windows in long sequences.</li>
+        <li>A single view constrains depth motion and hidden parts only weakly.</li>
+        <li>On real videos, errors in the reconstructed mesh and the completed video carry over to the animation.</li>
+      </ul>
+    </div>
+  </section>
+  
+  <div class="pg-modal" id="real-modal" hidden>
+    <div class="pg-modal-box" role="dialog" aria-modal="true" aria-labelledby="real-modal-title">
+      <div class="pg-modal-head">
+        <button class="pg-modal-nav" type="button" id="real-prev" aria-label="Previous clip">&lsaquo;</button>
+        <div class="pg-modal-title" id="real-modal-title"></div>
+        <button class="pg-modal-nav" type="button" id="real-next" aria-label="Next clip">&rsaquo;</button>
+        <button class="pg-modal-close" type="button" id="real-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="pg-sync-grid pg-cols-4" id="real-grid"></div>
+      <div class="pg-controls" id="real-controls"></div>
+    </div>
+  </div>
+
+  <script src="./static/data/manifest.js?v=rdmesh-ft-real-20261125"></script>
+  <script src="./static/data/dycheck.js?v=rdmesh-ft-20261125"></script>
+  <script src="./static/data/phystwin.js?v=rdmesh-ft-20261125"></script>
+  <script src="./static/data/longseq.js?v=rdmesh-ft-20261125"></script>
+  <script src="./static/data/gpt_pref.js?v=20261125-rdmeshft"></script>
+  <script src="./static/data/gt3d.js?v=20261125-nosupp"></script>
+  <script src="./static/js/page.js?v=20261125-nosupp"></script>
+  <script type="importmap">{ "imports": { "three": "./static/js/vendor/three.module.min.js" } }</script>
+  <script type="module" src="./static/js/app3d.js?v=20261122f"></script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+
+@media (max-width: 640px) {
+  
+  .section-title.title.is-3 { font-size: 1.45rem; line-height: 1.25; }
+  .publication-title.title.is-1 { font-size: 2.3rem; }
+  
+  .task-heading { flex-direction: column; gap: .45rem; }
+  
+  .pg-topnav { flex-wrap: nowrap !important; justify-content: flex-start !important; overflow-x: auto; scrollbar-width: none; white-space: nowrap; padding-left: 12px; padding-right: 12px; }
+  .pg-topnav::-webkit-scrollbar { display: none; }
+  .pg-topnav > * { flex: 0 0 auto; }
+
+  
+  .pg-wall, .pg-wall.pg-wall--4 {
+    display: flex; gap: .7rem; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 2px 0 4px;
+  }
+  .pg-wall::-webkit-scrollbar { display: none; }
+  .pg-wall .pg-pair, .pg-wall .pg-pair[hidden] { display: block; flex: 0 0 86%; scroll-snap-align: start; }
+  .pg-wall--4 .pg-pair, .pg-wall--4 .pg-pair[hidden] { flex-basis: 46%; }
+  .pg-wall-arrow, .pg-wall-count { display: none !important; }
+  .pg-wall-head { flex-wrap: wrap; gap: .1rem .6rem; margin-top: 1.2rem; }
+  .pg-wall-head span::after { content: ' · swipe ›'; }
+  .pg-pair-cap { font-size: .8rem; padding: .35rem .55rem; }
+  .pg-pair-more { font-size: .76rem; }
+
+  
+  .pg-gpt-row { grid-template-columns: 92px minmax(0, 1fr); gap: .3rem .5rem; }
+  .pg-gpt-name { font-size: .86rem; overflow-wrap: anywhere; }
+  .pg-gpt-score { width: 2.4em; font-size: .76rem; }
+
+  
+  .pg-sync-grid.pg-cols-3, .pg-sync-grid.pg-cols-4, .pg-sync-grid.pg-cols-5, .pg-sync-grid.pg-cols-7 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  
+  .pg-modal { padding: 0; align-items: stretch; }
+  .pg-modal-box { border-radius: 0; max-height: none; height: 100%; padding: .6rem .7rem 1rem; }
+  .pg-modal-title { font-size: .9rem; }
+}
+@media (max-width: 640px) {
+  .app-hero { grid-template-columns: auto 56px auto; }
+  .app-pill { min-width: 0; font-size: 1rem; padding: 7px 12px; gap: 8px; }
+  .app-cube-wrap { width: 96px; height: 96px; }
+  .app-cube { width: 60px; height: 60px; }
+  .app-cube-f { transform: translateZ(30px); } .app-cube-b { transform: rotateY(180deg) translateZ(30px); }
+  .app-cube-l { transform: rotateY(-90deg) translateZ(30px); } .app-cube-r { transform: rotateY(90deg) translateZ(30px); }
+  .app-cube-t { transform: rotateX(90deg) translateZ(30px); } .app-cube-d { transform: rotateX(-90deg) translateZ(30px); }
+  .app-cube-label { font-size: 2rem; }
+  .app-hero-out-cap { font-size: .62rem; }
+  .app-hero-tag { font-size: .9rem; } .app-hero-star { display: none; } .app-hero-tag b { font-size: 1.05rem; }
+}
+@media (max-width: 640px) {   
+  .app-fuse { grid-template-columns: 1fr; justify-items: center; gap: 8px; }
+  .app-fuse-title { order: 1; text-align: center; }
+  .app-fuse-title .site-title-rest { white-space: normal; }
+  .app-fuse-title .app-hero-tag { text-align: center; }
+  .app-fuse .app-hero-wires { display: none; }
+  .app-fuse .app-hero-in { order: 2; flex-direction: row; gap: 6px; }
+  .app-fuse .app-hero-in::before { content: none; }
+  .app-fuse .app-pill { min-width: 0; font-size: .95rem; padding: 6px 11px; }
+}
+@media (max-width: 640px) {   
+  .app-fuse .app-hero-in { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .app-fuse .app-pill { min-width: 0; font-size: 1rem; padding: 4px 12px 4px 4px; gap: 8px; }
+  .app-pill-thumb { width: 40px; height: 40px; border-radius: 10px; }
+  .app-pill-word { font-size: .6rem; }
+}
+@media (max-width: 640px) {
+  .app-fuse .app-pill { padding: 5px 10px; gap: 10px; }
+  .app-pill-thumb, .app-pill-thumb--text, .app-pill-thumb--image, .app-pill-thumb--mesh { width: 28px; height: 28px; }
+  .app-pill-word { font-size: .6rem; }
+  .app3-reset span { display: none; }
+}
+
+
+@media (max-width: 640px) {
+  .pg-teaser { margin: 1.4rem -16px .4rem; }
+  .pg-teaser-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .pg-teaser img { width: 760px; max-width: none; padding: 0 16px; box-sizing: content-box; }
+  .pg-teaser figcaption { margin: .7rem 16px 0; font-size: .92rem; }
+}

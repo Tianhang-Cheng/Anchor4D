@@ -1,0 +1,14 @@
+.pub-authors{margin:.4rem auto .3rem;font-size:1.15rem;color:var(--w-ink)}
+.pub-authors span{display:inline-block;margin:0 .55rem}
+.pub-authors a{color:inherit;border-bottom:1px solid var(--w-edge)}
+.pub-authors a:hover{color:var(--w-terra)}
+.pub-authors sup,.pub-affils sup{font-size:.7em;margin-left:1px}
+.pub-affils{color:var(--w-muted);font-size:1rem;margin-bottom:.2rem}
+.pub-affils span{display:inline-block;margin:0 .5rem}
+.pub-notes{color:var(--w-faint);font-size:.9rem}
+.pub-links{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin:1rem 0 1.6rem}
+.pub-btn{display:inline-flex;align-items:center;gap:.45rem;padding:.5rem 1.15rem;border-radius:999px;background:var(--w-ink);color:#fff!important;font-weight:600;font-size:.98rem}
+.pub-btn:hover{background:var(--w-terra)}
+.pub-btn svg{width:1.1em;height:1.1em}
+.pub-bib{background:var(--w-sand);border:1px solid var(--w-edge);border-radius:10px;padding:1rem 1.2rem;overflow-x:auto;font-size:.85rem;color:var(--w-text);white-space:pre}
+@media (max-width:600px){.pub-authors{font-size:1rem}.pub-affils{font-size:.9rem}}

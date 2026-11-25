@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="mesh" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path fill="currentColor" fill-opacity=".045" d="M32 6 55 19v27L32 59 9 46V19Z"/>
+      <path d="M32 6v27l23-14M9 19l23 14v26M9 46l23-13 23 13M9 19l23-13 23 13v27L32 59 9 46Z"/>
+      <path stroke-opacity=".45" d="m9 19 23 40 23-40M32 6 9 46h46Z"/>
+    </g>
+    <g fill="currentColor"><circle cx="32" cy="6" r="2"/><circle cx="9" cy="19" r="2"/><circle cx="55" cy="19" r="2"/><circle cx="32" cy="33" r="2"/><circle cx="9" cy="46" r="2"/><circle cx="55" cy="46" r="2"/><circle cx="32" cy="59" r="2"/></g>
+  </symbol>
+  <symbol id="motion" viewBox="0 0 100 76">
+    <g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linejoin="round">
+      <g opacity=".22"><path d="m4 37 15-9 15 9v18l-15 9-15-9Z M19 28v18L4 37m15 9 15-9M19 46v18M4 55l30-18"/></g>
+      <g opacity=".45"><path d="m26 25 17-10 17 10v21L43 56 26 46Z M43 15v20L26 25m17 10 17-10M43 35v21M26 46l34-21"/></g>
+      <path fill="currentColor" fill-opacity=".045" d="m53 16 20-12 22 13-2 26-22 13-20-13Z"/>
+      <path d="m53 16 20-12 22 13-2 26-22 13-20-13Z M73 4l-2 26-18-14m18 14 24-13M71 30v26M51 43l44-26M53 16l18 40 24-39M51 43h42"/>
+      <path stroke-opacity=".5" d="M12 72h73m-5-4 5 4-5 4"/>
+    </g>
+    <g fill="currentColor"><circle cx="73" cy="4" r="1.8"/><circle cx="53" cy="16" r="1.8"/><circle cx="95" cy="17" r="1.8"/><circle cx="71" cy="30" r="1.8"/><circle cx="51" cy="43" r="1.8"/><circle cx="93" cy="43" r="1.8"/><circle cx="71" cy="56" r="1.8"/></g>
+  </symbol>
+  <symbol id="video" viewBox="0 0 72 64">
+    <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="10" width="62" height="44" rx="6" fill="currentColor" fill-opacity=".045"/>
+      <path d="m30 22 16 10-16 10Z" fill="currentColor" fill-opacity=".12"/>
+      <path stroke-opacity=".45" d="M13 60h46M13 4h46"/>
+    </g>
+  </symbol>
+  <symbol id="recon" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 10a8 8 0 0 0-14-4L3 9m0-6v6h6M4 14a8 8 0 0 0 14 4l3-3m0 6v-6h-6"/>
+    </g>
+  </symbol>
+  <symbol id="gen" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="4" width="14" height="16" rx="3"/>
+      <path d="m7 9 5 3-5 3Z" fill="currentColor" fill-opacity=".12"/>
+      <path d="M17 12h5m-3-3 3 3-3 3"/>
+    </g>
+  </symbol>
+  <symbol id="arrow" viewBox="0 0 32 24"><path d="M3 12h25m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="info" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/></g><circle cx="12" cy="7.5" r="1" fill="currentColor"/></symbol>
+</svg>

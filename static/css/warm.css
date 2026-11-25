@@ -1,0 +1,80 @@
+
+@font-face { font-family: "NunitoLocal"; font-weight: 200 1000; font-style: normal; font-display: swap; src: url("../fonts/NunitoSans-Variable.ttf") format("truetype"); }
+@font-face { font-family: "NunitoLocal"; font-weight: 200 1000; font-style: italic; font-display: swap; src: url("../fonts/NunitoSans-Italic-Variable.ttf") format("truetype"); }
+
+:root {
+  --w-ink: #2a2220;        
+  --w-text: #4a3f3a;       
+  --w-muted: #6b5e57;      
+  --w-faint: #9a8a80;
+  --w-terra: #c0532b;      
+  --w-cream: #fffaf5;      
+  --w-sand: #f8f0e8;       
+  --w-chip: #f4e9df;       
+  --w-chip-hover: #ecdccd;
+  --w-edge: #f0e4d9;       
+  --w-sage: #5f8a4a;       
+  --site-ink: var(--w-ink);
+  --site-muted: var(--w-muted);
+  --site-line: var(--w-edge);
+  --site-accent: var(--w-terra);
+  --site-accent-2: #d98a3d;
+  --site-soft: var(--w-sand);
+  --pg-ours: #e75b9b;
+  --pg-input: var(--w-sage);
+  --w-font: "NunitoLocal", "Nunito Sans", -apple-system, "Segoe UI", sans-serif;
+}
+
+body, button, input, select, .title, .subtitle, .content,
+.pg-tabs button, .pg-chips button, .pg-controls button, .pg-controls select, .pg-panel-label, .pg-stat-num, .site-venue {
+  font-family: var(--w-font) !important;
+}
+html, body { background: var(--w-cream); }
+body { color: var(--w-text); font-size: 16.5px; }
+.title, .subtitle { color: var(--w-ink); }
+a { color: var(--w-terra); }
+code { background: var(--w-chip); color: var(--w-ink); border-radius: 4px; }
+
+
+.pg-topnav { background: rgba(255, 250, 245, 0.9); border-bottom-color: var(--w-edge); }
+.pg-topnav a { color: var(--w-muted); font-weight: 600; }
+.pg-topnav a:hover { color: var(--w-terra); }
+
+
+.site-hero {
+  background:
+    radial-gradient(900px 420px at 15% -10%, rgba(192, 83, 43, 0.10), transparent 70%),
+    radial-gradient(800px 380px at 90% 0%, rgba(217, 138, 61, 0.10), transparent 70%),
+    linear-gradient(180deg, #fcf3ea 0%, var(--w-cream) 100%) !important;
+}
+.site-venue { color: var(--w-terra); border: 0; background: rgba(192, 83, 43, 0.08); font-weight: 700; }
+.site-brand { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: var(--w-terra); font-weight: 800; letter-spacing: -0.02em; }
+.site-title-rest { color: var(--w-text); font-weight: 500 !important; max-width: 1040px; font-size: clamp(1.3rem, 2.6vw, 1.85rem); line-height: 1.3; letter-spacing: 0; }
+
+
+.section-alt { background: var(--w-sand); border-color: var(--w-edge); }
+.section-title { color: var(--w-ink) !important; font-weight: 750 !important; letter-spacing: -0.015em; }
+.section-title::after { background: var(--w-terra); height: 3px; width: 44px; }
+.pg-lead, .pg-caption, .pg-long-meta { color: var(--w-muted); }
+
+
+.pg-tabs button, .pg-chips button { background: var(--w-chip); border-color: transparent; color: var(--w-ink); font-weight: 600; }
+.section-alt .pg-tabs button, .section-alt .pg-chips button { background: #fff; }
+.pg-tabs button:hover, .pg-chips button:hover { background: var(--w-chip-hover); border-color: transparent; color: var(--w-ink); }
+.pg-tabs button[aria-pressed=true], .pg-chips button[aria-pressed=true] { background: var(--w-terra); border-color: var(--w-terra); color: #fff; }
+
+
+.pg-panel { background: #fff; border-color: var(--w-edge); border-radius: 12px; }
+.pg-panel video { background: #fff; }
+.pg-panel-label { border-top-color: var(--w-edge); color: var(--w-ink); font-weight: 600; }
+.pg-panel.is-ours .pg-panel-label, .pg-panel.is-input .pg-panel-label { font-weight: 700; }
+
+
+.pg-controls button, .pg-controls select, .pg-clipnav button { background: var(--w-chip); border-color: transparent; color: var(--w-ink); font-weight: 600; }
+.section-alt .pg-controls button, .section-alt .pg-controls select, .section-alt .pg-clipnav button { background: #fff; }
+.pg-controls button:hover, .pg-clipnav button:hover { background: var(--w-chip-hover); color: var(--w-ink); }
+.pg-controls input[type=range] { accent-color: var(--w-terra); }
+.pg-controls .pg-clock, .pg-clip-count, .pg-colorbar { color: var(--w-muted); }
+.pg-clip-label { color: var(--w-ink); font-weight: 700; }
+.pg-prompt { color: var(--w-ink); }
+.pg-prompt::before { color: var(--w-faint); }
